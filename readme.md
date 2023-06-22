@@ -14,7 +14,7 @@
 2. check installed packages “$ pip freeze” -> no packages will be installed
 3. Install requests “ $ python3 -m pip install requests “
 4. Install selenium “ $ python3 -m pip install selenium “
-5. Install webdriver-manager “ $ python3 -m pip install webdriver-manager “
+5. Install webdriver-manager “ $ python3 -m pip install webdriver-manager “python -m pip install webdriver-manager
 6. Install behave “ $ python3 -m pip install behave “
 7. Install allure-behave for reports “ $ python3 -m pip install allure-behave
 8. Install pytest for reports “ $ python3 -m pip install pytest”
