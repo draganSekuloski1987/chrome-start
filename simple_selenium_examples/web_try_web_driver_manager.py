@@ -6,6 +6,8 @@ from selenium.webdriver.firefox.service import Service as GeckoService
 from webdriver_manager.firefox import GeckoDriverManager
 
 # driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+from selenium.webdriver.firefox.service import Service as GeckoService
+from webdriver_manager.firefox import GeckoDriverManager
 driver = webdriver.Firefox(service=GeckoService(GeckoDriverManager().install()))
 driver.get("http://way2automation.com/")
 driver.maximize_window()
