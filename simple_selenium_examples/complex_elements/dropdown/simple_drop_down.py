@@ -26,29 +26,15 @@ def page_open(web_driver, url):
     web_driver.maximize_window()
     web_driver.implicitly_wait(20)
 
-
 driver = browser("chrome")
-page_open(driver, "https://mail.google.com/")
+page_open(driver, "https://echoecho.com/htmlforms11.htm")
 wait = WebDriverWait(driver, 10)
 
+# Dropdown form as standard "select" html element
+example_dropdown = driver.find_element(By.NAME, "dropdownmenu")
+example_dropdown.send_keys("Cheese")
 
-# Elements and actions
-username_input = driver.find_element(By.ID, "identifierId")
-username_input.send_keys("trainer@way2automation.com")
 
-input_next_button = driver.find_element(By.CSS_SELECTOR, "#identifierNext button")
-input_next_button.click()
 
-password_input_selector = (By.CSS_SELECTOR, "[id='password'] input")
-password_input = wait.until(EC.element_to_be_clickable(password_input_selector))
 
-password_input.send_keys("hello test")
 
-password_next_button = driver.find_element(By.CSS_SELECTOR, "#passwordNext button")
-password_next_button.click()
-
-wrong_password_error_message_text = driver.find_element(By.XPATH, "//span[contains(text(),'Wrong password')]").text
-assert wrong_password_error_message_text == "Wrong password. Try again or click Forgot password to reset it."
-
-# Xpath selector of next button with ID contain partial text
-# next_button = driver.find_element(By.XPATH, "//*[contains(@id, 'Next')]//button")
