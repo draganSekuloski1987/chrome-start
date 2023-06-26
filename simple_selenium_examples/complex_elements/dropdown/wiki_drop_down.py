@@ -57,7 +57,10 @@ for link in all_links:
     # print(f"link text: {link.text} - attribute value: {link.get_attribute('href')}")
 print(f"total links count {len(all_links)}")
 
-project_links = driver.find_elements(By.CSS_SELECTOR, "div.other-projects  a")
+
+project_block = driver.find_element(By.CSS_SELECTOR, "div.other-projects")
+project_links = project_block.find_elements(By.TAG_NAME, "a")
+
 print(f"project links count {len(project_links)}")
 
 first_link = project_links.__getitem__(0).text
@@ -65,6 +68,5 @@ print(f"First link: {first_link}")
 
 
 for link in project_links:
-    pass
-    # print(f"link text: {link.text} - attribute value: {link.get_attribute('href')}")
+    print(f"link text: {link.text} - attribute value: {link.get_attribute('href')}")
 driver.quit()
